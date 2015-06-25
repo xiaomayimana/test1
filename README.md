@@ -8,7 +8,7 @@ tefler supports modularity via import for large feature models.
 However, the current version of tefler does not support more for validation (mainly naming and types) and context assistant except
 for the basic Xtext provides based on the grammar that tefler supports. These feature may be included in future versions. 
 
-You can install tefler via Eclipse update manager (site: https://github.com/zhou-jg/tefler/deploy). After installation, you can 
+You should download the __person.zhoujg.spl.feature.zip__ from /__eclipse_update__ and then install it via Eclipse __Install New Software...__ menu . After installation, you can 
 create feature files with extension .fm thereby activating tefler editors. The grammar (in EBNF) can be found at  https://github.com/zhou-jg/tefler/deploy/TEFL_grammar.txt.
 
 Hoping it helps to you!
