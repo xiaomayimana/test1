@@ -1,5 +1,5 @@
 RootDeclaration			::= "root" name = ID GroupCardinality? FeatureBody?
-FeatureDeclaration 		::=	StandaloneCardinality? "feature" ID GroupCardinality? FeatureBody?
+FeatureDeclaration 		::=	StandaloneCardinality? ("feature" | "ref") ID GroupCardinality? FeatureBody?
 FeatureBody				::= "{"
 								AttributePart?
 								FeatureDeclaration*
