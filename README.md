@@ -6,6 +6,7 @@ __New in release 1.0.0:__
 * Introduce a root feature for every model file (every model file begins with a root feature)
 
 Attribute typing validation for rules will be added in the next release.
+
 ----
 Tefler is a textual feature (an essential concept in software product lines) modeling tool based on Xtext. Tefler supports feature
 attributes, complex composition rules, as well as cardinality support for both standalone (individual) and feature groups. In addition,
