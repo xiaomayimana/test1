@@ -2,8 +2,9 @@
 ##A textual feature modeling tool based on Xtext.
 Tefler is a textual feature (an essential concept in software product lines) modeling tool based on Xtext. Tefler supports feature attributes, complex composition rules, as well as cardinality support for both standalone (individual) and feature groups. In addition, tefler supports modularity which is important for large feature models.
 
-You can download the __person.zhoujg.spl.feature.zip__ from /__eclipse_update__ and then install it via Eclipse __Install New Software...__ menu . After installation, you can 
-create feature files with extension .fm thereby activating tefler editors. The grammar (in EBNF) can be found at  https://github.com/zhou-jg/tefler/deploy/TEFL_grammar.txt.
+You can download the __person.zhoujg.spl.feature.zip__ from /__eclipse_update__ and then install it via Eclipse __Install New Software...__ menu. After installation, you can 
+create feature files with extension .fm thereby activating tefler editors. The grammar (in EBNF) can be found at https://github.com/zhou-jg/tefler/deploy/TEFL_grammar.txt.
+You may also use comments indicated by a "//" for a single line and a pair of "/*" and "*/" for multiple lines in your model files.
 
 Hoping it helps to you!
 
