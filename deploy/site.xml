@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/person.zhoujg.feature.sdk_1.1.0.jar" id="person.zhoujg.feature.sdk" version="1.1.0"/>
+   <feature url="features/person.zhoujg.feature.sdk_1.1.1.jar" id="person.zhoujg.feature.sdk" version="1.1.1"/>
 </site>
