@@ -8,6 +8,8 @@ You may also use comments indicated by a "//" for a single line and a pair of "/
 
 Hoping it helps to you!
 
+__icons inclusion for release 1.1.1__.
+
 __New in release 1.1.0:__
 * In grammar, I removed 'real' type for feature attribute since it is not so useful as I thought and can be replaced with other types.
 * Add type validation when you specify composition rules for your feature models to ensure the expressions are valid.
