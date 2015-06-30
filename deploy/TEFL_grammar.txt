@@ -14,7 +14,7 @@ RulePart				::= "rules {"
 								FeatureExpr*
 							"}"
 Attribute				::= TYPE ID
-TYPE					::= "int" | "string" | "real" | "bool"
+TYPE					::= "int" | "string" | "bool"
 FeatureExpr				::= LogicExpr CompsitionOp LogicExpr
 LogicExpr				::= ("!" | "not") LogicExpr |
 							BasicExpr LogicOp BasicExpr 
@@ -24,7 +24,6 @@ Atom					::= STRING | Number | BOOL | QualifiedName
 CompositionOp			::= "recommend" | "require" | "exclude" | "harm" | "->" | "<->"
 LogicOp					::= "and" | "or" | "&&" | "||"
 ComparationOp			::= ">" | ">=" | "==" | "<" | "<=" | "<>"
-Number					::= INT ("." INT)*
 BOOL					::= "true" | "false"
 QualifiedName			::= ID ("." ID)*
 ID						::= '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*
