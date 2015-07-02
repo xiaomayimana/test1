@@ -8,6 +8,8 @@ You may also use comments indicated by a "//" for a single line and a pair of "/
 
 Hoping it helps to you!
 
+__bugfix__ for type validation for __release 1.1.2__.
+
 __icons inclusion for release 1.1.1__.
 
 __New in release 1.1.0:__
