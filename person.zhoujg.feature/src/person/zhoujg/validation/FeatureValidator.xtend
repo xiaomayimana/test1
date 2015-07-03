@@ -7,6 +7,8 @@ import org.eclipse.xtext.validation.Check
 import person.zhoujg.feature.Atom
 import person.zhoujg.feature.AttributeType
 import person.zhoujg.feature.BasicExpr
+import person.zhoujg.feature.Feature
+import person.zhoujg.feature.FeaturePackage
 
 import static extension person.zhoujg.util.FeatureUtil.isAttribute
 
@@ -17,6 +19,22 @@ import static extension person.zhoujg.util.FeatureUtil.isAttribute
  */
 class FeatureValidator extends AbstractFeatureValidator {
 
+	@Check
+	//a group feature cannot have a (stand-alone) cardinality declaration
+	def checkCardinalityForGroupFeature(Feature fea){
+		if (!fea.attribute) {
+			val holder = fea.eContainer
+			if (holder != null) {
+				val parent = holder.eContainer
+				if ((parent as Feature).inCard != null && fea.outCard != null){
+					error('Group feature can not declare a cardinality.',
+					 		fea, FeaturePackage.Literals.FEATURE__OUT_CARD
+					 	)
+				}
+			}		
+		}	
+	}
+	
 	@Check
 	//compare whether the two operands around the operator are type compatible
 	def checkBasicExpressionTying(BasicExpr expr) {
@@ -30,7 +48,7 @@ class FeatureValidator extends AbstractFeatureValidator {
 				 val feature = literal.name
 				 if (feature == null || feature.attribute && feature.type != AttributeType.BOOL){
 				 	error('Literal should be a bool type here',
-				 		expr, expr.LExpr.eContainingFeature
+				 		expr, FeaturePackage.Literals.BASIC_EXPR__LEXPR
 				 	)
 				 }		 	
 			}
@@ -40,10 +58,10 @@ class FeatureValidator extends AbstractFeatureValidator {
 		}	
 	}
 	
-	def checkLeftAndRightType(Atom atom1, Atom atom2, BasicExpr expr) {	
+	private def checkLeftAndRightType(Atom atom1, Atom atom2, BasicExpr expr) {	
 		if (atom1.atomType != atom2.atomType) {			
 			error('Type mismatch around the operator!',
-			 		expr.eContainer, expr.eContainingFeature
+			 		expr, FeaturePackage.Literals.BASIC_EXPR__COMP_OP
 			 	)
 		}
 	}
