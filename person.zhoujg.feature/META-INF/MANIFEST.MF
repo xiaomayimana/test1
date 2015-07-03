@@ -1,0 +1,37 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: person.zhoujg.feature
+Bundle-Vendor: My Company
+Bundle-Version: 1.1.2
+Bundle-SymbolicName: person.zhoujg.feature; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext;visibility:=reexport,
+ org.eclipse.xtext.xbase;resolution:=optional;visibility:=reexport,
+ org.eclipse.xtext.generator;resolution:=optional,
+ org.apache.commons.logging;bundle-version="1.0.4";resolution:=optional,
+ org.eclipse.emf.codegen.ecore;resolution:=optional,
+ org.eclipse.emf.mwe.utils;resolution:=optional,
+ org.eclipse.emf.mwe2.launch;resolution:=optional,
+ org.eclipse.xtext.util,
+ org.eclipse.emf.ecore,
+ org.eclipse.emf.common,
+ org.eclipse.xtext.xbase.lib,
+ org.antlr.runtime,
+ org.eclipse.xtext.common.types,
+ org.objectweb.asm;bundle-version="[5.0.1,6.0.0)";resolution:=optional,
+ org.eclipse.core.runtime;bundle-version="3.10.0"
+Import-Package: org.apache.log4j
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: person.zhoujg,
+ person.zhoujg.feature,
+ person.zhoujg.feature.impl,
+ person.zhoujg.feature.util,
+ person.zhoujg.formatting,
+ person.zhoujg.generator,
+ person.zhoujg.parser.antlr,
+ person.zhoujg.parser.antlr.internal,
+ person.zhoujg.scoping,
+ person.zhoujg.serializer,
+ person.zhoujg.services,
+ person.zhoujg.util,
+ person.zhoujg.validation

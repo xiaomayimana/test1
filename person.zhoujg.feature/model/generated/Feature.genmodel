@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/person.zhoujg.feature/src-gen" editDirectory="/person.zhoujg.feature.edit/src"
+    editorDirectory="/person.zhoujg.feature.editor/src" modelPluginID="person.zhoujg.feature"
+    forceOverwrite="true" modelName="Feature" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="6.0" copyrightFields="false" editPluginID="person.zhoujg.feature.edit"
+    editorPluginID="person.zhoujg.feature.editor" runtimeVersion="2.10">
+  <genPackages prefix="Feature" basePackage="person.zhoujg" disposableProviderFactory="true"
+      fileExtensions="fm" ecorePackage="Feature.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Feature.ecore#//AttributeType">
+      <genEnumLiterals ecoreEnumLiteral="Feature.ecore#//AttributeType/int"/>
+      <genEnumLiterals ecoreEnumLiteral="Feature.ecore#//AttributeType/string"/>
+      <genEnumLiterals ecoreEnumLiteral="Feature.ecore#//AttributeType/bool"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Feature.ecore#//ComparationOP">
+      <genEnumLiterals ecoreEnumLiteral="Feature.ecore#//ComparationOP/GT"/>
+      <genEnumLiterals ecoreEnumLiteral="Feature.ecore#//ComparationOP/GE"/>
+      <genEnumLiterals ecoreEnumLiteral="Feature.ecore#//ComparationOP/EQ"/>
+      <genEnumLiterals ecoreEnumLiteral="Feature.ecore#//ComparationOP/LT"/>
+      <genEnumLiterals ecoreEnumLiteral="Feature.ecore#//ComparationOP/LE"/>
+      <genEnumLiterals ecoreEnumLiteral="Feature.ecore#//ComparationOP/NE"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Feature.ecore#//FeatureOP">
+      <genEnumLiterals ecoreEnumLiteral="Feature.ecore#//FeatureOP/REC"/>
+      <genEnumLiterals ecoreEnumLiteral="Feature.ecore#//FeatureOP/REQ"/>
+      <genEnumLiterals ecoreEnumLiteral="Feature.ecore#//FeatureOP/EXC"/>
+      <genEnumLiterals ecoreEnumLiteral="Feature.ecore#//FeatureOP/HAR"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Feature.ecore#//LogicOP">
+      <genEnumLiterals ecoreEnumLiteral="Feature.ecore#//LogicOP/AND"/>
+      <genEnumLiterals ecoreEnumLiteral="Feature.ecore#//LogicOP/OR"/>
+    </genEnums>
+    <genClasses ecoreClass="Feature.ecore#//Feature">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Feature.ecore#//Feature/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Feature.ecore#//Feature/inCard"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Feature.ecore#//Feature/body"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Feature.ecore#//Feature/outCard"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Feature.ecore#//Feature/ref"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Feature.ecore#//Feature/type"/>
+    </genClasses>
+    <genClasses ecoreClass="Feature.ecore#//FeatureBody">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Feature.ecore#//FeatureBody/attrs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Feature.ecore#//FeatureBody/features"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Feature.ecore#//FeatureBody/ruleBody"/>
+    </genClasses>
+    <genClasses ecoreClass="Feature.ecore#//AttributePart">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Feature.ecore#//AttributePart/attr"/>
+    </genClasses>
+    <genClasses ecoreClass="Feature.ecore#//RuleBody">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Feature.ecore#//RuleBody/rules"/>
+    </genClasses>
+    <genClasses ecoreClass="Feature.ecore#//FeatureExpr">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Feature.ecore#//FeatureExpr/left"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Feature.ecore#//FeatureExpr/op"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Feature.ecore#//FeatureExpr/right"/>
+    </genClasses>
+    <genClasses ecoreClass="Feature.ecore#//LogicExpr">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Feature.ecore#//LogicExpr/leftLogicExpr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Feature.ecore#//LogicExpr/logicOP"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Feature.ecore#//LogicExpr/right"/>
+    </genClasses>
+    <genClasses ecoreClass="Feature.ecore#//BasicExpr">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Feature.ecore#//BasicExpr/lExpr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Feature.ecore#//BasicExpr/compOp"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Feature.ecore#//BasicExpr/rExpr"/>
+    </genClasses>
+    <genClasses ecoreClass="Feature.ecore#//Atom">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Feature.ecore#//Atom/literal"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Feature.ecore#//Atom/sub"/>
+    </genClasses>
+    <genClasses ecoreClass="Feature.ecore#//Literal">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Feature.ecore#//Literal/str"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Feature.ecore#//Literal/int"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Feature.ecore#//Literal/bool"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Feature.ecore#//Literal/name"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

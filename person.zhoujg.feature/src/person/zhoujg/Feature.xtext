@@ -1,0 +1,88 @@
+grammar person.zhoujg.Feature with org.eclipse.xtext.common.Terminals
+
+generate feature "http://www.zhoujg.person/Feature"
+
+RootDeclaration returns Feature:
+	"root" name = ID
+	inCard = GroupCardinality?
+	body = FeatureBody?
+;
+	
+FeatureDeclaration returns Feature: 
+	outCard = StandaloneCardinality? 
+	(("feature" name=ID) | ("ref" ref=[Feature|ID])) 
+	inCard = GroupCardinality?
+	body = FeatureBody?
+;
+
+FeatureBody: {FeatureBody}
+	"{"
+		attrs = AttributePart?
+		(features += FeatureDeclaration)*
+		(=> "rules" ruleBody = RuleBody)?
+	"}"
+;
+
+StandaloneCardinality:
+	("["  INT (".." INT)? "]")+ | "opt";
+
+GroupCardinality:
+	("<" INT (".." INT)? ">")+;	
+	
+AttributePart:
+	{AttributePart} "attrs {"
+		(attr += Attribute)* 
+	"}";
+		
+RuleBody: {RuleBody}
+	"{"
+		(rules += FeatureExpr)*
+	"}";		
+		
+Attribute returns Feature: 
+	type = AttributeType name = ID;
+
+enum AttributeType:
+	int | string | bool ;
+	
+FeatureExpr:
+	left=LogicExpr (op=FeatureOP) right=LogicExpr
+;
+
+LogicExpr:
+	("!"|"not")? leftLogicExpr=BasicExpr ({LogicExpr.leftLogicExpr=current} logicOP=LogicOP right=BasicExpr)*
+;
+
+BasicExpr:
+	lExpr = Atom (compOp = ComparationOP rExpr = Atom)?
+;
+
+enum ComparationOP:
+	GT=">" | GE=">=" | EQ="==" | LT="<" | LE="<=" | NE="<>"
+;
+
+Atom :
+	literal=Literal | ("(" sub=LogicExpr ")")
+;
+
+Literal: 
+	str = STRING | int = INT | bool = BOOL | name=[Feature|QualifiedName]
+;
+
+BOOL:
+	"true" | "false"
+;
+
+QualifiedName:
+	ID ("." ID)*
+;
+
+enum FeatureOP : 
+	REC="recommend" | REQ="require" | EXC="exclude" | HAR="harm" | REQ="->" | EXC="<->" 
+;
+
+enum LogicOP : 
+	AND="and" | OR="or" | AND="&&" | OR="||"
+;
+
+

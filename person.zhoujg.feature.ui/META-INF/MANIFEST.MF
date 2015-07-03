@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: person.zhoujg.feature.ui
+Bundle-Vendor: My Company
+Bundle-Version: 1.1.1
+Bundle-SymbolicName: person.zhoujg.feature.ui; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: person.zhoujg.feature;visibility:=reexport,
+ org.eclipse.xtext.ui,
+ org.eclipse.ui.editors;bundle-version="3.5.0",
+ org.eclipse.ui.ide;bundle-version="3.5.0",
+ org.eclipse.xtext.ui.shared,
+ org.eclipse.ui,
+ org.eclipse.xtext.builder,
+ org.eclipse.xtext.xbase.lib,
+ org.antlr.runtime,
+ org.eclipse.xtext.common.types.ui,
+ org.eclipse.xtext.ui.codetemplates.ui,
+ org.eclipse.compare
+Import-Package: org.apache.log4j
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: person.zhoujg.ui.quickfix,
+ person.zhoujg.ui.contentassist,
+ person.zhoujg.ui.contentassist.antlr,
+ person.zhoujg.ui.internal
+Bundle-Activator: person.zhoujg.ui.internal.FeatureActivator
